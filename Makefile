@@ -7,8 +7,7 @@ all: go-build vue-build
 # Build the Go project
 go-build:
 	@echo "Building Go project..."
-	@go build -o bin/server ./cmd/proxy
-
+	@go build -o bin/server main.go
 # Run the Go server
 go-run:
 	@echo "Running Go server..."
@@ -17,12 +16,12 @@ go-run:
 # Build the Vue.js project
 vue-build:
 	@echo "Building Vue.js project..."
-	@cd .crypto-tracker-frontend && npm run build
+	@cd frontend && npm run build
 
 # Serve the Vue.js project using the development server
 vue-serve:
 	@echo "Starting Vue.js development server..."
-	@cd .crypto-tracker-frontend && npm run serve
+	@cd frontend && npm run serve
 
 # Clean up generated files
 clean:
