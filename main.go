@@ -27,7 +27,7 @@ func main() {
 	router.Use(cors.Default())
 
 	// Serve static files from Vue.js build directory
-	router.Static("/app", "./crypto-tracker-frontend/dist")
+	router.Static("/app", "./frontend/dist")
 
 	router.GET("/price/:crypto", func(c *gin.Context) {
 		crypto := c.Param("crypto")
